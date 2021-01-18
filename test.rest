@@ -2,7 +2,7 @@ POST http://localhost:9000/.netlify/functions/server/query
 Content-Type: application/json
 
 {
-    "queryData":"cp"
+    "queryData":"r"
 }
 
 ###
@@ -10,6 +10,6 @@ POST http://localhost:9000/.netlify/functions/server/add
 Content-Type: application/json
 
 {
-    "shortForm":"BP",
-    "fullForm":"Brake Pressure"
+    "shortForm":"RSI",
+    "fullForm":"silicon rectifier"
 }
