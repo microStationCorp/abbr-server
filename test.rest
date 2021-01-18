@@ -13,3 +13,15 @@ Content-Type: application/json
     "shortForm":"RSI",
     "fullForm":"silicon rectifier"
 }
+
+
+###
+POST https://tender-beaver-5ecace.netlify.app/.netlify/functions/server/query
+Content-Type: application/json
+
+{
+    "queryData":"r"
+}
+
+###
+GET https://tender-beaver-5ecace.netlify.app/.netlify/functions/server/

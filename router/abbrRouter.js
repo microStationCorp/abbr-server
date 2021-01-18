@@ -1,6 +1,13 @@
 const router = require("express").Router();
 const Abbr = require("../models/abbrModel");
 
+//test get
+router.get("/all", (req, res) => {
+  Abbr.find()
+    .then((d) => res.json(d))
+    .catch((err) => res.json(err));
+});
+
 //add new abbreviation
 router.post("/add", (req, res) => {
   const { shortForm, fullForm } = req.body;
