@@ -25,6 +25,7 @@ router.post("/query", (req, res) => {
       res.json({
         result: newData.map((nd) => {
           return {
+            _id: nd._id,
             sf: nd.shortForm,
             ff: nd.fullForm,
           };
