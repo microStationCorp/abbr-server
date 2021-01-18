@@ -8,6 +8,10 @@ router.get("/all", (req, res) => {
     .catch((err) => res.json(err));
 });
 
+router.get("/test", (req, res) => {
+  res.json({ hi: "hi" });
+});
+
 //add new abbreviation
 router.post("/add", (req, res) => {
   const { shortForm, fullForm } = req.body;

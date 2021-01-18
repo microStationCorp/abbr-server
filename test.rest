@@ -2,7 +2,7 @@ POST http://localhost:9000/.netlify/functions/server/query
 Content-Type: application/json
 
 {
-    "queryData":"r"
+    "queryData":"b"
 }
 
 ###
@@ -24,4 +24,11 @@ Content-Type: application/json
 }
 
 ###
-GET https://tender-beaver-5ecace.netlify.app/.netlify/functions/server/
+GET https://tender-beaver-5ecace.netlify.app/.netlify/functions/server/all
+
+###
+GET https://tender-beaver-5ecace.netlify.app/.netlify/functions/server/test
+
+
+###
+GET http://localhost:9000/.netlify/functions/server/test
