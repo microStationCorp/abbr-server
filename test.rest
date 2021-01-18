@@ -1,0 +1,11 @@
+GET http://localhost:9000/.netlify/functions/server/query
+
+
+###
+POST http://localhost:9000/.netlify/functions/server/add
+Content-Type: application/json
+
+{
+    "shortForm":"BP",
+    "fullForm":"Brake Pressure"
+}

@@ -8,7 +8,8 @@ const abbrSchema = new mongoose.Schema({
   fullForm: {
     type: String,
     required: true,
+    unique: true,
   },
 });
 
-module.exports = ABBr = mongoose.model("abbr", abbrSchema);
+module.exports = Abbr = mongoose.model("abbr", abbrSchema);
