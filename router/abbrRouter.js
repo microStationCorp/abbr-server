@@ -14,10 +14,22 @@ router.post("/add", (req, res) => {
 });
 
 //get queried abbreviation
-router.get("/query", (req, res) => {
+router.post("/query", (req, res) => {
+  const { queryData } = req.body;
   Abbr.find()
-    .then((d) => {
-      res.json(d);
+    .select("shortForm fullForm")
+    .then((data) => {
+      const newData = data.filter((d) =>
+        d.shortForm.includes(queryData.toUpperCase())
+      );
+      res.json({
+        result: newData.map((nd) => {
+          return {
+            sf: nd.shortForm,
+            ff: nd.fullForm,
+          };
+        }),
+      });
     })
     .catch((err) => res.json(err));
 });
