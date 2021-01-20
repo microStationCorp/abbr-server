@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("../router/abbrRouter");
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -20,6 +21,7 @@ mongoose
 //router
 
 //middleware
+app.use(cors())
 app.use(express.json());
 app.use("/abbrserver/api", router);
 
