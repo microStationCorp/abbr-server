@@ -21,7 +21,7 @@ mongoose
 
 //middleware
 app.use(express.json());
-app.use("/api", router);
+app.use("/abbrserver/api", router);
 
 app.listen(process.env.PORT || 5000, () =>
   console.log(`server starts at ${process.env.PORT}`)
