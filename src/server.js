@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const serverless = require("serverless-http");
 const router = require("../router/abbrRouter");
 
 require("dotenv").config();
@@ -22,10 +21,8 @@ mongoose
 
 //middleware
 app.use(express.json());
-app.use("/.netlify/functions/server", router);
+app.use("/api", router);
 
-// app.listen(process.env.PORT, () =>
-//   console.log(`server starts at ${process.env.PORT}`)
-// );
-
-module.exports.handler = serverless(app);
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`server starts at ${process.env.PORT}`)
+);
