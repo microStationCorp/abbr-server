@@ -1,4 +1,4 @@
-POST http://localhost:5000/api/query
+POST http://localhost:5000/abbrserver/api/query
 Content-Type: application/json
 
 {
@@ -6,12 +6,18 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/api/add
+POST http://localhost:5000/abbrserver/api/add
 Content-Type: application/json
 
 {
-    "shortForm":"RSI",
-    "fullForm":"silicon rectifier"
+    "shortForm":"CP",
+    "fullForm":"Compressor"
 }
 
+###
+POST https://abbrserver.herokuapp.com/abbrserver/api/query
+Content-Type: application/json
 
+{
+    "queryData":"c"
+}
