@@ -2,7 +2,7 @@ POST http://localhost:5000/abbrserver/api/query
 Content-Type: application/json
 
 {
-    "queryData":"r"
+    "queryData":"i"
 }
 
 ###
@@ -19,5 +19,14 @@ POST https://abbrserver.herokuapp.com/abbrserver/api/query
 Content-Type: application/json
 
 {
-    "queryData":"c"
+    "queryData":"i"
+}
+
+###
+POST https://abbrserver.herokuapp.com/abbrserver/api/add
+Content-Type: application/json
+
+{
+    "shortForm":"INC",
+    "fullForm":"Indian National Congress"
 }

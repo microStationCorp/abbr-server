@@ -5,7 +5,10 @@ const Abbr = require("../models/abbrModel");
 router.post("/add", (req, res) => {
   const { shortForm, fullForm } = req.body;
 
-  const abbr = new Abbr({ shortForm: shortForm.toUpperCase(), fullForm });
+  const abbr = new Abbr({
+    shortForm: shortForm.toUpperCase(),
+    fullForm: fullForm.toUpperCase(),
+  });
 
   abbr
     .save()
