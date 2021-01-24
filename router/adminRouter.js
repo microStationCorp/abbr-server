@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Admin = require("../models/adminModel");
 const jwt = require("jsonwebtoken");
+const { authentication } = require("../middleware/authentication");
 require("dotenv").config();
 
 //for login
@@ -45,5 +46,13 @@ router.post("/login", (req, res) => {
 //     .then((data) => res.json(data))
 //     .catch((err) => res.json(err));
 // });
+
+router.get("/auth", authentication, (req, res) => {
+  if (req.user) {
+    Admin.findById(req.user.id).then((res) =>
+      res.json({ username: user.username })
+    );
+  }
+});
 
 module.exports = router;

@@ -16,14 +16,16 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: false,
   })
-  .then(() => console.log("local mongoDB server connected"))
+  .then(() => console.log("mongoDB server connected"))
   .catch((err) => console.log(err));
 
-//router
+  
+  //middleware
+  app.use(cors());
+  app.use(express.json());
 
-//middleware
-app.use(cors());
-app.use(express.json());
+  
+  //router
 app.use("/abbrserver/api", router);
 app.use("/abbrserver/admin", adminRouter);
 
