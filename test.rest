@@ -5,6 +5,25 @@ Content-Type: application/json
     "queryData":"i"
 }
 
+
+###
+POST http://localhost:5000/abbrserver/admin/login
+Content-Type: application/json
+
+{
+    "username":"sherlock",
+    "password":"Sujan27021995"
+}
+
+# ###
+# POST http://localhost:5000/abbrserver/admin/register
+# Content-Type: application/json
+
+# {
+#     "username":"sherlock",
+#     "password":"Sujan27021995"
+# }
+
 ###
 POST http://localhost:5000/abbrserver/api/add
 Content-Type: application/json

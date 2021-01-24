@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("../router/abbrRouter");
+const adminRouter = require("../router/adminRouter");
 const cors = require("cors");
 
 require("dotenv").config();
@@ -21,9 +22,10 @@ mongoose
 //router
 
 //middleware
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 app.use("/abbrserver/api", router);
+app.use("/abbrserver/admin", adminRouter);
 
 app.listen(process.env.PORT || 5000, () =>
   console.log(`server starts at ${process.env.PORT}`)
